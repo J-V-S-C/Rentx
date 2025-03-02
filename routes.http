@@ -1,0 +1,11 @@
+GET http://localhost:3333/categories
+
+###
+
+POST http://localhost:3333/categories
+Content-Type: application/json
+
+{
+    "name": "James",
+    "description": "Bonito"
+}
