@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "main": "server.ts",
   "license": "MIT",
+  "type": "module",
   "scripts": {
     "lint": "eslint src --ext .ts --fix",
-    "dev": "nodemon --watch 'src/**/*.ts' --exec 'node --inspect=9229 -r ts-node/register' ./src/server.ts",
+    "dev": "nodemon --watch 'src/**/*.ts' --exec 'node --loader ts-node/esm --inspect=9229' ./src/server.ts",
     "save": "prettier --write 'src/**/*.ts'"
   },
   "dependencies": {
@@ -26,6 +27,6 @@
     "nodemon": "^3.1.9",
     "prettier": "^3.5.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.0"
   }
 }

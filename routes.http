@@ -9,3 +9,17 @@ Content-Type: application/json
     "name": "James",
     "description": "Bonito"
 }
+
+###
+
+GET http://localhost:3333/specifications
+
+###
+
+POST http://localhost:3333/specifications
+Content-Type: application/json
+
+{
+    "name": "Cambio",
+    "description": "Automatico"
+}

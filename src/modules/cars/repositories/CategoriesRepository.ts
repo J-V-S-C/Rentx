@@ -1,14 +1,22 @@
-import { Category } from '../model/category';
+import { Category } from '../model/category.js';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from './ICategoriesRepository';
+} from './ICategoriesRepository.js';
 
 class CategoriesRepository implements ICategoriesRepository {
   private categories: Category[];
 
-  constructor() {
+  private static INSTANCE: CategoriesRepository;
+  private constructor() {
     this.categories = [];
+  }
+
+  public static geiInstance(): CategoriesRepository {
+    if (!CategoriesRepository.INSTANCE) {
+      CategoriesRepository.INSTANCE = new CategoriesRepository();
+    }
+    return CategoriesRepository.INSTANCE;
   }
 
   create({ description, name }: ICreateCategoryDTO): void {

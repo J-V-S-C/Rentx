@@ -1,8 +1,8 @@
-import { Category } from '../model/category';
+import { Category } from '../model/category.js';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
-} from './ICategoriesRepository';
+} from './ICategoriesRepository.js';
 
 class PostgresCategoriesRepository implements ICategoriesRepository {
   findByName(name: string): Category | null {
@@ -10,7 +10,7 @@ class PostgresCategoriesRepository implements ICategoriesRepository {
     return null;
   }
   list(): Category[] | null {
-    console.log('Putero');
+    console.log('Hello');
     return null;
   }
   create({ name, description }: ICreateCategoryDTO): void {
