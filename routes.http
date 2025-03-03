@@ -10,6 +10,7 @@ Content-Type: application/json
     "description": "Bonito"
 }
 
+
 ###
 
 GET http://localhost:3333/specifications

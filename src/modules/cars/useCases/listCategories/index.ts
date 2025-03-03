@@ -1,4 +1,4 @@
-import { CategoriesRepository } from '../../repositories/CategoriesRepository.js';
+import { CategoriesRepository } from '../../repositories/implementations/CategoriesRepository.js';
 import { ListCategoriesController } from './ListCategoriesController.js';
 import { ListCategoriesUseCase } from './ListCategoriesUseCase.js';
 const categoriesRepository = CategoriesRepository.geiInstance();
