@@ -7,19 +7,18 @@ import {
 class SpecificationRepository implements ISpecificationRepository {
   private specifications: Specification[];
 
-  constructor() {
+  private static INSTANCE: SpecificationRepository;
+  private constructor() {
     this.specifications = [];
   }
-  list(): Specification[] | null {
-    return this.specifications;
-  }
-  findByName(name: string): Specification | void {
-    const specification = this.specifications.find(
-      (specification) => specification.name === name,
-    );
 
-    return specification;
+  public static getInstance(): SpecificationRepository {
+    if (!SpecificationRepository.INSTANCE) {
+      SpecificationRepository.INSTANCE = new SpecificationRepository();
+    }
+    return SpecificationRepository.INSTANCE;
   }
+
   create({ name, description }: ICreateSpecificationDTO): void {
     const specification = new Specification();
 
@@ -30,6 +29,17 @@ class SpecificationRepository implements ISpecificationRepository {
     });
 
     this.specifications.push(specification);
+  }
+
+  list(): Specification[] {
+    return this.specifications;
+  }
+  findByName(name: string): Specification | void {
+    const specification = this.specifications.find(
+      (specification) => specification.name === name,
+    );
+
+    return specification;
   }
 }
 
