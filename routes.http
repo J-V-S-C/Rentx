@@ -24,3 +24,16 @@ Content-Type: application/json
     "name": "Cambio",
     "description": "Automatico"
 }
+
+###
+
+
+POST http://localhost:3333/categories/import
+Content-Type: multipart/form-data; boundary=FormBoundary
+
+--FormBoundary
+Content-Disposition: form-data; name="file"; filename="dicasNode"
+Content-Type: application/octet-stream
+
+< /home/joao_victor/Documents/notepad/dicasNode
+--FormBoundary--

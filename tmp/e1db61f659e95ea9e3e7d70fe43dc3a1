@@ -1,0 +1,11 @@
+O que estudar em Node??
+   --> APIs Nativas do Node;
+   --> Typescript (já tenho um pouco de experiência e gosto :) )
+   --> autenticação JWT[Jason Web Token, padrão de autenticação mais comum WEB] (não sei nada)
+   --> SOLID <--
+   --> SQL (já sei), ORM(prisma)			
+   --> Docker (vou fazer no final)
+   --> Frameworks existentes(Fastfy, NestJs e mais)
+   --> Testes automatizados (Jest, Vitas)
+   --> Arquitetura de Software (boas práticas, clean code)
+   --> CI/CD (testes automatizados)
