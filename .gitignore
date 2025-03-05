@@ -1,5 +1,6 @@
 node_modules/
 .vscode/
 yarn.lock
-screenshot-*.png
+diagrama.png
 routes.http
+tmp/
