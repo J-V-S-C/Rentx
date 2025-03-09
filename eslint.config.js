@@ -1,7 +1,7 @@
 import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
-import eslintConfigPrettier from 'eslint-config-prettier';
 import eslintPluginPrettier from 'eslint-plugin-prettier';
+import eslintConfigPrettier from 'eslint-config-prettier';
 
 export default [
   {
@@ -10,6 +10,9 @@ export default [
       parser: tsParser,
       ecmaVersion: 2022,
       sourceType: 'module',
+      parserOptions: {
+        project: './tsconfig.json',
+      },
     },
     plugins: {
       '@typescript-eslint': tseslint,
@@ -20,9 +23,11 @@ export default [
       semi: 'error',
       indent: ['error', 2, { SwitchCase: 1 }],
       'no-multi-spaces': 'error',
-      'space-in-parens': 'error',
       'no-multiple-empty-lines': 'error',
       'prefer-const': 'error',
+      'no-inline-comments': 'error', 
+      'spaced-comment': ['error', 'never'], 
+      'no-console': 'warn',
       '@typescript-eslint/explicit-function-return-type': 'error',
       '@typescript-eslint/naming-convention': [
         'error',
@@ -32,7 +37,15 @@ export default [
           prefix: ['I'],
         },
       ],
-      'prettier/prettier': 'error',
+      'prettier/prettier': [
+        'error',
+        {
+          tabWidth: 2,  
+          useTabs: false,
+          arrowParens: 'avoid',
+        },
+      ],
     },
   },
+  eslintConfigPrettier,
 ];

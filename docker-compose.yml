@@ -4,14 +4,20 @@ services:
     container_name: database_ignite
     restart: always
     ports:
-      - 5432:5432
+      - '5432:5432'
     environment:
-      - POSTGRES_USER=docker
-      - POSTGRES_PASSWORD=ignite
-      - POSTGRES_DB=rentx
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
     volumes:
-      - pgdata:/data/postgres
-    network_mode: host
+      - pgdata:/var/lib/postgresql/data
+
+    healthcheck:
+      test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
+      interval: 1s
+      timeout: 1s
+      retries: 1
+
   app:
     build: .
     image: rentx
@@ -20,7 +26,10 @@ services:
       - '3333:3333'
     volumes:
       - .:/usr/app
-    network_mode: host
+
+    depends_on:
+      database_ignite:
+        condition: service_healthy
 
 volumes:
   pgdata:

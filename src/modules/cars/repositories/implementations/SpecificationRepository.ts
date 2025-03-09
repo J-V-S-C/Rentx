@@ -1,8 +1,5 @@
-import { Specification } from '../../model/Specification.js';
-import {
-  ICreateSpecificationDTO,
-  ISpecificationRepository,
-} from '../ISpecificationRepository.js';
+import { Specification } from '../../entities/Specification.js';
+import { ICreateSpecificationDTO, ISpecificationRepository } from '../ISpecificationRepository.js';
 
 class SpecificationRepository implements ISpecificationRepository {
   private specifications: Specification[];
@@ -35,9 +32,7 @@ class SpecificationRepository implements ISpecificationRepository {
     return this.specifications;
   }
   findByName(name: string): Specification | void {
-    const specification = this.specifications.find(
-      (specification) => specification.name === name,
-    );
+    const specification = this.specifications.find(specification => specification.name === name);
 
     return specification;
   }

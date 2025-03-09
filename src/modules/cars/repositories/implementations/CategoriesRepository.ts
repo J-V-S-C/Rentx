@@ -1,4 +1,4 @@
-import { Category } from '../../model/category.js';
+import { Category } from '../../entities/category.js';
 import {
   ICategoriesRepository,
   ICreateCategoryDTO,
@@ -36,10 +36,9 @@ class CategoriesRepository implements ICategoriesRepository {
   }
 
   findByName(name: string): Category | null {
-    const category = this.categories.find((category) => category.name === name);
+    const category = this.categories.find(category => category.name === name);
     if (category) return category;
     return null;
   }
 }
-
 export { CategoriesRepository };

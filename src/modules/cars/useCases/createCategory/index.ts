@@ -4,8 +4,6 @@ import { CreateCategoryUseCase } from './CreateCategoryUseCase.js';
 
 const categoriesRepository = CategoriesRepository.geiInstance();
 const createCategoryUseCase = new CreateCategoryUseCase(categoriesRepository);
-const createCategoryController = new CreateCategoryController(
-  createCategoryUseCase,
-);
+const createCategoryController = new CreateCategoryController(createCategoryUseCase);
 
 export { createCategoryController };

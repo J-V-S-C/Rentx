@@ -1,3 +1,4 @@
+import 'reflect-metadata';
 import express from 'express';
 import { router } from './routes/index.js';
 import swaggerUI from 'swagger-ui-express';
@@ -15,6 +16,7 @@ async function startServer(): Promise<void> {
   app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerFile));
   app.use(router);
 
+  //eslint-disable-next-line no-console
   app.listen(3333, () => console.log('Server is running'));
 }
 
