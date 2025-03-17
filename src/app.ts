@@ -4,6 +4,7 @@ import { router } from './routes/index.js';
 import swaggerUI from 'swagger-ui-express';
 import { readFile } from 'fs/promises';
 import { AppDataSource } from './database/index.js';
+import './shared/container';
 
 async function startServer(): Promise<void> {
   const swaggerFile = JSON.parse(
@@ -17,7 +18,7 @@ async function startServer(): Promise<void> {
   app.use(router);
 
   //eslint-disable-next-line no-console
-  app.listen(3333, () => console.log('Server is running'));
+  app.listen(3333, () => console.log('Server is running, port:3333'));
 }
 
 export { startServer };
