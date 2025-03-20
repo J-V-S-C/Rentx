@@ -1,0 +1,5 @@
+Sedan,Carro confortável e ideal para viagens
+Hatchback,Compacto e econômico para a cidade
+SUV,Espaçoso e robusto para qualquer terreno
+Picape,Ideal para transporte de carga e trabalho pesado
+Conversível,Carro esportivo com teto retrátil
