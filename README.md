@@ -183,9 +183,9 @@ npm test
 ```
 ## Contributing
 
-- **💬 [Join the Discussions](https://LOCAL/Rentx/cnwincienicnoen/discussions)**: Share your insights, provide feedback, or ask questions.
-- **🐛 [Report Issues](https://LOCAL/Rentx/cnwincienicnoen/issues)**: Submit bugs found or log feature requests for the `cnwincienicnoen` project.
-- **💡 [Submit Pull Requests](https://LOCAL/Rentx/cnwincienicnoen/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
+- **💬 [Join the Discussions](https://LOCAL/Rentx/discussions)**: Share your insights, provide feedback, or ask questions.
+- **🐛 [Report Issues](https://LOCAL/Rentx/issues)**: Submit bugs found or log feature requests for the `Rentx` project.
+- **💡 [Submit Pull Requests](https://LOCAL/Rentx/blob/main/CONTRIBUTING.md)**: Review open PRs, and submit your own PRs.
 
 <details closed>
 <summary>Contributing Guidelines</summary>
@@ -193,7 +193,7 @@ npm test
 1. **Fork the Repository**: Start by forking the project repository to your LOCAL account.
 2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
    ```sh
-   git clone /home/joao_victor/Projects/Learning/Web/Node/Rentx/
+   git clone /home/joao_victor/Projects/Learning/Web/Node/Rentx
    ```
 3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
    ```sh
@@ -211,15 +211,4 @@ npm test
 7. **Submit a Pull Request**: Create a PR against the original project repository. Clearly describe the changes and their motivations.
 8. **Review**: Once your PR is reviewed and approved, it will be merged into the main branch. Congratulations on your contribution!
 </details>
-
-<details closed>
-<summary>Contributor Graph</summary>
-<br>
-<p align="left">
-   <a href="https://LOCAL{/Rentx/cnwincienicnoen/}graphs/contributors">
-      <img src="https://contrib.rocks/image?repo=Rentx/cnwincienicnoen">
-   </a>
-</p>
-</details>
-
 ---
