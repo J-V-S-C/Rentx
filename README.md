@@ -27,8 +27,6 @@
 ## Table of Contents
 
 - [Table of Contents](#table-of-contents)
-- [Overview](#overview)
-- [Features](#features)
 - [Project Structure](#project-structure)
     - [Project Index](#project-index)
 - [Getting Started](#getting-started)
@@ -43,38 +41,79 @@
 
 ---
 
-## Overview
-
-
-
----
-
-## Features
-
-<code>❯ REPLACE-ME</code>
-
----
-
 ## Project Structure
 
 ```sh
-└── cnwincienicnoen/
-    ├── Dockerfile
-    ├── diagrama.png
-    ├── docker-compose.yml
-    ├── eslint.config.js
-    ├── package.json
-    ├── routes.http
-    ├── src
-    │   ├── app.ts
-    │   ├── database
-    │   ├── modules
-    │   ├── routes
-    │   ├── server.ts
-    │   ├── shared
-    │   └── swagger.json
-    └── tsconfig.json
-```
+Rentx/
+│── diagrama.png
+│── docker-compose.yml
+│── Dockerfile
+│── eslint.config.js
+│── package.json
+│── package-lock.json
+│── README.md
+│── routes.http
+│── tsconfig.json
+│── yarn.lock
+│── tmp/
+│
+├── src/
+│   ├── app.ts
+│   ├── server.ts
+│   ├── swagger.json
+│   │
+│   ├── database/
+│   │   ├── index.ts
+│   │   ├── migrations/
+│   │   │   └── 1741526446282-CreateCategories.ts
+│   │
+│   ├── modules/
+│   │   ├── cars/
+│   │   │   ├── entities/
+│   │   │   │   ├── Category.ts
+│   │   │   │   ├── Specification.ts
+│   │   │   │
+│   │   │   ├── repositories/
+│   │   │   │   ├── ICategoriesRepository.ts
+│   │   │   │   ├── ISpecificationRepository.ts
+│   │   │   │   ├── implementations/
+│   │   │   │   │   ├── CategoriesRepository.ts
+│   │   │   │   │   ├── SpecificationRepository.ts
+│   │   │   │
+│   │   │   ├── useCases/
+│   │   │   │   ├── createCategory/
+│   │   │   │   │   ├── CreateCategoryController.ts
+│   │   │   │   │   ├── CreateCategoryUseCase.ts
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │
+│   │   │   │   ├── createSpecification/
+│   │   │   │   │   ├── CreateSpecificationController.ts
+│   │   │   │   │   ├── CreateSpecificationUseCase.ts
+│   │   │   │   │
+│   │   │   │   ├── importCategory/
+│   │   │   │   │   ├── ImportCategoryController.ts
+│   │   │   │   │   ├── ImportCategoryUseCase.ts
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │
+│   │   │   │   ├── listCategories/
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── ListCategoriesController.ts
+│   │   │   │   │   ├── ListCategoriesUseCase.ts
+│   │   │   │   │
+│   │   │   │   ├── listSpecifications/
+│   │   │   │   │   ├── index.ts
+│   │   │   │   │   ├── ListSpecificationsController.ts
+│   │   │   │   │   ├── ListSpecificationsUseCase.ts
+│
+│   ├── routes/
+│   │   ├── categories.routes.ts
+│   │   ├── index.ts
+│   │   ├── specification.routes.ts
+│
+│   ├── shared/
+│   │   ├── container/
+│   │   │   ├── index.ts
+
 
 ### Project Index
 
