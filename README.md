@@ -26,18 +26,12 @@
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
 - [Project Structure](#project-structure)
-    - [Project Index](#project-index)
-- [Getting Started](#getting-started)
     - [Prerequisites](#prerequisites)
     - [Installation](#installation)
     - [Usage](#usage)
     - [Testing](#testing)
-- [Roadmap](#roadmap)
 - [Contributing](#contributing)
-- [License](#license)
-- [Acknowledgments](#acknowledgments)
 
 ---
 
@@ -187,17 +181,6 @@ Cnwincienicnoen uses the {__test_framework__} test framework. Run the test suite
 ```sh
 npm test
 ```
-
----
-
-## Roadmap
-
-- [X] **`Task 1`**: <strike>Implement feature one.</strike>
-- [ ] **`Task 2`**: Implement feature two.
-- [ ] **`Task 3`**: Implement feature three.
-
----
-
 ## Contributing
 
 - **💬 [Join the Discussions](https://LOCAL/Rentx/cnwincienicnoen/discussions)**: Share your insights, provide feedback, or ask questions.
