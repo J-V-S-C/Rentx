@@ -115,7 +115,7 @@ Rentx/
 │   │   │   ├── index.ts
 
 
----
+```
 
 ### Prerequisites
 
