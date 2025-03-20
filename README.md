@@ -3,7 +3,7 @@
 <!-- HEADER STYLE: COMPACT -->
 <img src="readmeai/assets/logos/purple.svg" width="30%" align="left" style="margin-right: 15px">
 
-# CNWINCIENICNOEN
+# Rentx
 <em></em>
 
 <!-- BADGES -->
