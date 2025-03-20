@@ -1,7 +1,5 @@
 <div id="top">
 
-<!-- HEADER STYLE: COMPACT -->
-<img src="readmeai/assets/logos/purple.svg" width="30%" align="left" style="margin-right: 15px">
 
 # Rentx
 <em></em>
