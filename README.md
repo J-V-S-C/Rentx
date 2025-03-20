@@ -132,13 +132,13 @@ Build cnwincienicnoen from the source and intsall dependencies:
 1. **Clone the repository:**
 
     ```sh
-    ❯ git clone ../cnwincienicnoen
+    ❯ git clone ../Rentx
     ```
 
 2. **Navigate to the project directory:**
 
     ```sh
-    ❯ cd cnwincienicnoen
+    ❯ cd Rentx
     ```
 
 3. **Install the dependencies:**
@@ -152,7 +152,7 @@ Build cnwincienicnoen from the source and intsall dependencies:
 	**Using [docker](https://www.docker.com/):**
 
 	```sh
-	❯ docker build -t Rentx/cnwincienicnoen .
+	❯ docker build -t Rentx/ .
 	```
 <!-- SHIELDS BADGE CURRENTLY DISABLED -->
 	<!-- [![npm][npm-shield]][npm-link] -->
@@ -210,7 +210,7 @@ npm test
 1. **Fork the Repository**: Start by forking the project repository to your LOCAL account.
 2. **Clone Locally**: Clone the forked repository to your local machine using a git client.
    ```sh
-   git clone /home/joao_victor/Projects/Learning/Web/Node/Rentx/cnwincienicnoen/
+   git clone /home/joao_victor/Projects/Learning/Web/Node/Rentx/
    ```
 3. **Create a New Branch**: Always work on a new branch, giving it a descriptive name.
    ```sh
@@ -238,27 +238,5 @@ npm test
    </a>
 </p>
 </details>
-
----
-
-## License
-
-Cnwincienicnoen is protected under the [LICENSE](https://choosealicense.com/licenses) License. For more details, refer to the [LICENSE](https://choosealicense.com/licenses/) file.
-
----
-
-## Acknowledgments
-
-- Credit `contributors`, `inspiration`, `references`, etc.
-
-<div align="right">
-
-[![][back-to-top]](#top)
-
-</div>
-
-
-[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
-
 
 ---
