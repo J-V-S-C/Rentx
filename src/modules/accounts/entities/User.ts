@@ -8,8 +8,6 @@ class User {
   @Column('varchar')
   name: string;
   @Column('varchar')
-  username: string;
-  @Column('varchar')
   email: string;
   @Column('varchar')
   password: string;
