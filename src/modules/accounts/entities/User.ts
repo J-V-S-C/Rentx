@@ -15,6 +15,8 @@ class User {
   driver_license: string;
   @Column('varchar')
   isAdmin: boolean;
+  @Column('varchar')
+  avatar: string;
   @CreateDateColumn({ type: 'timestamp' })
   created_at: Date;
 
