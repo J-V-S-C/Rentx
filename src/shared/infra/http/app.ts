@@ -3,7 +3,6 @@ import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
 import { readFile } from 'fs/promises';
 import swaggerUI from 'swagger-ui-express';
-import path from 'path';
 import '@shared/container';
 import { router } from '@shared/infra/http/routes';
 import { AppError } from '@errors/AppError';
