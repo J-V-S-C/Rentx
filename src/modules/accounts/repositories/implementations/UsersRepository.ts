@@ -1,8 +1,8 @@
+import { AppDataSource } from '@database/index';
+import { ICreateUsersDTO } from '@modules/accounts/dtos/ICreateUserDTO';
+import { User } from '@modules/accounts/entities/User';
 import { Repository } from 'typeorm';
-import { ICreateUsersDTO } from '../../dtos/ICreateUserDTO.js';
-import { IUsersRepository } from '../IUsersRepository.js';
-import { User } from '../../entities/User.js';
-import { AppDataSource } from '../../../../database/index.js';
+import { IUsersRepository } from '../IUsersRepository';
 
 class UsersRepository implements IUsersRepository {
   private repository: Repository<User>;
@@ -29,15 +29,14 @@ class UsersRepository implements IUsersRepository {
 
     await this.repository.save(user);
   }
-  async findByEmail(email: string): Promise<User | null> {
+  async findByEmail(email: string): Promise<User | undefined> {
     const user = await this.repository.findOneBy({ email });
-    if (user) return user;
-    return null;
+    return user ?? undefined;
   }
 
-  async findById(id: string): Promise<User | null> {
+  async findById(id: string): Promise<User | undefined> {
     const user = await this.repository.findOne({ where: { id } });
-    return user;
+    return user ?? undefined;
   }
 }
 

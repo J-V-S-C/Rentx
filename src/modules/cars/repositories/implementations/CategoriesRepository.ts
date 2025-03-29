@@ -1,10 +1,8 @@
-import { Category } from '../../entities/category.js';
-import {
-  ICategoriesRepository,
-  ICreateCategoryDTO,
-} from '../ICategoriesRepository.js';
-import { AppDataSource } from '../../../../database/index.js';
+import { Category } from '@modules/cars/entities/Category';
 import { Repository } from 'typeorm';
+import { ICategoriesRepository } from '../ICategoriesRepository';
+import { AppDataSource } from '@database/index';
+import { ICreateCategoryDTO } from '@modules/cars/dtos/ICreateCategoryDTO';
 
 class CategoriesRepository implements ICategoriesRepository {
   private repository: Repository<Category>;
@@ -26,9 +24,9 @@ class CategoriesRepository implements ICategoriesRepository {
     return categories;
   }
 
-  async findByName(name: string): Promise<Category | null> {
+  async findByName(name: string): Promise<Category | undefined> {
     const category = await this.repository.findOneBy({ name });
-    return category;
+    return category ?? undefined;
   }
 }
 export { CategoriesRepository };

@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
-import { ImportCategoryUseCase } from './ImportCategoryUseCase.js';
 import { container } from 'tsyringe';
+import { ImportCategoryUseCase } from './ImportCategoryUseCase';
 
 class ImportCategoryController {
   async handle(request: Request, response: Response): Promise<Response> {

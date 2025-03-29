@@ -1,7 +1,7 @@
+import { AppError } from '@errors/AppError';
+import type { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
+import { deleteFile } from '@utils/file';
 import { inject, injectable } from 'tsyringe';
-import { IUsersRepository } from '../../repositories/IUsersRepository';
-import { deleteFile } from '../../../../utils/file';
-import { AppError } from '../../../../errors/AppError';
 
 interface IRequest {
   user_id: string;
@@ -28,8 +28,3 @@ class UpdateUserAvatarUseCase {
 }
 
 export { UpdateUserAvatarUseCase };
-//Adicionar coluna avatar na tabela users
-//Refatorar usuario com coluna avatar
-//configuração upload multer
-//Criar regra de negócio de upload
-//criar controller

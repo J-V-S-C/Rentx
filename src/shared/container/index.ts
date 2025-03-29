@@ -1,10 +1,10 @@
+import { UsersRepository } from '@modules/accounts/repositories/implementations/UsersRepository';
+import { IUsersRepository } from '@modules/accounts/repositories/IUsersRepository';
+import { ICategoriesRepository } from '@modules/cars/repositories/ICategoriesRepository';
+import { CategoriesRepository } from '@modules/cars/repositories/implementations/CategoriesRepository';
+import { SpecificationRepository } from '@modules/cars/repositories/implementations/SpecificationRepository';
+import { ISpecificationRepository } from '@modules/cars/repositories/ISpecificationRepository';
 import { container } from 'tsyringe';
-import { ICategoriesRepository } from '../../modules/cars/repositories/ICategoriesRepository.js';
-import { CategoriesRepository } from '../../modules/cars/repositories/implementations/CategoriesRepository.js';
-import { ISpecificationRepository } from '../../modules/cars/repositories/ISpecificationRepository.js';
-import { SpecificationRepository } from '../../modules/cars/repositories/implementations/SpecificationRepository.js';
-import { IUsersRepository } from '../../modules/accounts/repositories/IUsersRepository.js';
-import { UsersRepository } from '../../modules/accounts/repositories/implementations/UsersRepository.js';
 
 container.registerSingleton<ICategoriesRepository>(
   'CategoriesRepository',

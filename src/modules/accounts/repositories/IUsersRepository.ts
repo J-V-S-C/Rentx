@@ -1,10 +1,10 @@
-import { ICreateUsersDTO } from '../dtos/ICreateUserDTO.js';
-import { User } from '../entities/User.js';
+import { ICreateUsersDTO } from '../dtos/ICreateUserDTO';
+import { User } from '../entities/User';
 
 interface IUsersRepository {
   create(data: ICreateUsersDTO): Promise<void>;
-  findByEmail(email: string): Promise<User | null>;
-  findById(id: string): Promise<User | null>;
+  findByEmail(email: string): Promise<User | undefined>;
+  findById(id: string): Promise<User | undefined>;
 }
 
-export { IUsersRepository };
+export type { IUsersRepository };

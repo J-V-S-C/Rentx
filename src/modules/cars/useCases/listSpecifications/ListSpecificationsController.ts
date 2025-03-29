@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import { ListSpecificationsUseCase } from './ListSpecificationsUseCase.js';
+import { ListSpecificationsUseCase } from './ListSpecificationsUseCase';
 import { container } from 'tsyringe';
 
 class ListSpecificationsController {

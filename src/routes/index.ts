@@ -1,8 +1,8 @@
 import { Router } from 'express';
-import { categoriesRouter } from './categories.routes.js';
-import { specificationsRouter } from './specification.routes.js';
-import { usersRouter } from './users.routes.js';
-import { authenticateRouter } from './authenticate.routes.js';
+import { categoriesRouter } from './categories.routes';
+import { specificationsRouter } from './specification.routes';
+import { usersRouter } from './users.routes';
+import { authenticateRouter } from './authenticate.routes';
 
 const router = Router();
 

@@ -1,14 +1,10 @@
-import { Category } from '../entities/category.js';
-
-interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
+import { ICreateCategoryDTO } from '../dtos/ICreateCategoryDTO';
+import { Category } from '../entities/Category';
 
 interface ICategoriesRepository {
   create({ name, description }: ICreateCategoryDTO): Promise<void>;
   list(): Promise<Category[]>;
-  findByName(name: string): Promise<Category | null>;
+  findByName(name: string): Promise<Category | undefined>;
 }
 
-export { ICategoriesRepository, ICreateCategoryDTO };
+export type { ICategoriesRepository };

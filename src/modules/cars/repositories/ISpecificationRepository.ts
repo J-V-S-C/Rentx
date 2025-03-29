@@ -1,14 +1,10 @@
-import { Specification } from '../entities/Specification.js';
-
-interface ICreateSpecificationDTO {
-  name: string;
-  description: string;
-}
+import { ICreateSpecificationDTO } from '../dtos/ICreateSpecificationDTO';
+import { Specification } from '../entities/Specification';
 
 interface ISpecificationRepository {
   create({ name, description }: ICreateSpecificationDTO): Promise<void>;
   list(): Promise<Specification[]>;
-  findByName(name: string): Promise<Specification | null>;
+  findByName(name: string): Promise<Specification | undefined>;
 }
 
-export { ISpecificationRepository, ICreateSpecificationDTO };
+export type { ISpecificationRepository };

@@ -1,13 +1,13 @@
 import 'reflect-metadata';
 import express, { NextFunction, Request, Response } from 'express';
 import 'express-async-errors';
-import { router } from './routes';
+import { readFile } from 'fs/promises';
 import swaggerUI from 'swagger-ui-express';
 import path from 'path';
-import { readFile } from 'fs/promises';
-import { AppDataSource } from './database';
-import './shared/container';
+import '@shared/container';
 import { AppError } from './errors/AppError';
+import { AppDataSource } from './database';
+import { router } from './routes';
 
 async function startServer(): Promise<void> {
   const swaggerFile = JSON.parse(
