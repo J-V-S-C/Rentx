@@ -1,3 +1,3 @@
-import { startServer } from './app';
+import { startServer } from '@shared/infra/http/app';
 
 startServer();

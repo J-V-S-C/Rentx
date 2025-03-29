@@ -1,4 +1,4 @@
-import { ensureAuthentication } from '@middlewares/ensureAuthentication';
+import { ensureAuthentication } from '@shared/infra/http/middlewares/ensureAuthentication';
 import { CreateSpecificationController } from '@modules/cars/useCases/createSpecification/CreateSpecificationController';
 import { ListSpecificationsController } from '@modules/cars/useCases/listSpecifications/ListSpecificationsController';
 import { Router } from 'express';

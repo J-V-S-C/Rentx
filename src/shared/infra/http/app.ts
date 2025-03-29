@@ -5,14 +5,13 @@ import { readFile } from 'fs/promises';
 import swaggerUI from 'swagger-ui-express';
 import path from 'path';
 import '@shared/container';
-import { AppError } from './errors/AppError';
-import { AppDataSource } from './database';
-import { router } from './routes';
+import { router } from '@shared/infra/http/routes';
+import { AppError } from '@errors/AppError';
+import { AppDataSource } from '@shared/infra/typeorm/index';
+import { getSwaggerPath } from '@utils/getSwaggerPath';
 
 async function startServer(): Promise<void> {
-  const swaggerFile = JSON.parse(
-    await readFile(path.resolve(__dirname, 'swagger.json'), 'utf-8'),
-  );
+  const swaggerFile = JSON.parse(await readFile(getSwaggerPath(), 'utf-8'));
 
   await AppDataSource.initialize();
 

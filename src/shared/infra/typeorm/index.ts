@@ -1,9 +1,9 @@
 import { DataSource } from 'typeorm';
 import 'dotenv/config';
 import { AppError } from '@errors/AppError';
-import { User } from '@modules/accounts/entities/User';
-import { Specification } from '@modules/cars/entities/Specification';
-import { Category } from '@modules/cars/entities/Category';
+import { User } from '@modules/accounts/infra/typeorm/entities/User';
+import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
+import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 
 if (typeof process.env.DB_PORT === 'undefined') {
   throw new AppError('Invalid port type');
