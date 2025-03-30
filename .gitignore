@@ -5,4 +5,4 @@ diagrama.png
 routes.http
 tmp/
 .env
-coverage
+coverage/
