@@ -8,17 +8,17 @@ class CarsRepositoryInMemory implements ICarsRepository {
   async create({
     brand,
     category_id,
-    daily_number,
+    daily_rate,
     description,
     fine_amount,
     license_plate,
     name,
-  }: ICreateCarDTO): Promise<void> {
+  }: ICreateCarDTO): Promise<Car> {
     const car = new Car();
     Object.assign(car, {
       brand,
       category_id,
-      daily_number,
+      daily_rate,
       description,
       fine_amount,
       license_plate,
@@ -26,6 +26,12 @@ class CarsRepositoryInMemory implements ICarsRepository {
     });
 
     this.cars.push(car);
+
+    return car;
+  }
+
+  async findByLicensePlate(license_plate: string): Promise<Car | undefined> {
+    return this.cars.find(car => car.license_plate === license_plate);
   }
 }
 

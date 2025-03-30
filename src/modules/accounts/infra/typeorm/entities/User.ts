@@ -13,8 +13,8 @@ class User {
   password: string;
   @Column('varchar')
   driver_license: string;
-  @Column('varchar')
-  isAdmin: boolean;
+  @Column('boolean')
+  is_admin: boolean;
   @Column('varchar')
   avatar: string;
   @CreateDateColumn({ type: 'timestamp' })
