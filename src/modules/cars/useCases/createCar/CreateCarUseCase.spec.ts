@@ -50,7 +50,7 @@ describe('Create Car', () => {
 
   it('Should not be able to create a car with avaiable true by default', async () => {
     const car = await createCarUseCase.execute({
-      name: 'Car Avaible',
+      name: 'Car Available',
       description: 'Description Car1',
       daily_rate: 300,
       license_plate: 'ABCD-1234',

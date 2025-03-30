@@ -23,6 +23,7 @@ class CarsRepositoryInMemory implements ICarsRepository {
       fine_amount,
       license_plate,
       name,
+      available: true,
     });
 
     this.cars.push(car);
@@ -32,6 +33,22 @@ class CarsRepositoryInMemory implements ICarsRepository {
 
   async findByLicensePlate(license_plate: string): Promise<Car | undefined> {
     return this.cars.find(car => car.license_plate === license_plate);
+  }
+
+  async findAvailable(
+    brand?: string,
+    category_id?: string,
+    name?: string,
+  ): Promise<Car[]> {
+    return this.cars.filter(car => {
+      if (!car.available) return false;
+
+      if (brand && car.brand !== brand) return false;
+      if (category_id && car.category_id !== category_id) return false;
+      if (name && car.name !== name) return false;
+
+      return true;
+    });
   }
 }
 
