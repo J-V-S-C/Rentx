@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
   database_ignite:
     image: postgres
@@ -11,14 +13,11 @@ services:
       - POSTGRES_DB=${DB_NAME}
     volumes:
       - pgdata:/var/lib/postgresql/data
-
     healthcheck:
       test: ['CMD-SHELL', 'pg_isready -U ${DB_USER} -d ${DB_NAME}']
       interval: 1s
       timeout: 1s
-      retries: 1 
-
- 
+      retries: 1
 
   app:
     build: .
@@ -28,11 +27,10 @@ services:
       - '3333:3333'
     volumes:
       - .:/usr/app
-
+      - /usr/app/node_modules
     depends_on:
       database_ignite:
         condition: service_healthy
-    
+
 volumes:
   pgdata:
-    driver: local

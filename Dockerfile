@@ -3,11 +3,10 @@ FROM node
 WORKDIR /usr/app
 
 COPY package.json ./
-
-RUN npm install
+COPY package-lock.json ./
 
 COPY . . 
 
 EXPOSE 3333
 
-CMD ["npm", "run", "dev"]
+CMD ["sh", "-c", "npm install && npm run dev"]
