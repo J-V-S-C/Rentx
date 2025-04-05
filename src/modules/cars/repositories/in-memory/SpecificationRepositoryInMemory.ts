@@ -29,6 +29,10 @@ class SpecificationRepositoryInMemory implements ISpecificationRepository {
 
     return allSpecifications;
   }
+
+  async list(): Promise<Specification[]> {
+    return this.specifications;
+  }
 }
 
 export { SpecificationRepositoryInMemory };

@@ -14,7 +14,7 @@ class CreateCarSpecificationUseCase {
   constructor(
     @inject('CarsRepository')
     private carsRepository: ICarsRepository,
-    @inject('SpecificationsRepository')
+    @inject('SpecificationRepository')
     private specificationsRepository: ISpecificationRepository,
   ) {}
 

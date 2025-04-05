@@ -37,14 +37,7 @@ export default [
           prefix: ['I'],
         },
       ],
-      'prettier/prettier': [
-        'error',
-        {
-          tabWidth: 2,  
-          useTabs: false,
-          arrowParens: 'avoid',
-        },
-      ],
+  
     },
   },
   eslintConfigPrettier,

@@ -5,6 +5,7 @@ import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
 import { Category } from '@modules/cars/infra/typeorm/entities/Category';
 import { Car } from '@modules/cars/infra/typeorm/entities/Car';
+import { CarImage } from '@modules/cars/infra/typeorm/entities/CarImage';
 
 if (typeof process.env.DB_PORT === 'undefined') {
   throw new AppError('Invalid port type');
@@ -16,6 +17,6 @@ export const AppDataSource = new DataSource({
   username: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
-  entities: [Category, Specification, User, Car],
+  entities: [Category, Specification, User, Car, CarImage],
   migrations: ['./src/shared/infra/typeorm/migrations/*.ts'],
 });
