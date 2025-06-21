@@ -10,6 +10,13 @@ import { AppDataSource } from '@shared/infra/typeorm/index';
 import { getSwaggerPath } from '@utils/getSwaggerPath';
 
 async function startServer(): Promise<void> {
+  process.on('unhandledRejection', (reason, promise) => {
+    console.error('🛑 Unhandled Rejection at:', promise, 'reason:', reason);
+  });
+
+  process.on('uncaughtException', err => {
+    console.error('🔥 Uncaught Exception:', err);
+  });
   const swaggerFile = JSON.parse(await readFile(getSwaggerPath(), 'utf-8'));
 
   await AppDataSource.initialize();
