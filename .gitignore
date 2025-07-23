@@ -2,7 +2,6 @@ node_modules/
 .vscode/
 yarn.lock
 diagrama.png
-routes.http
 tmp/
 .env
 coverage/

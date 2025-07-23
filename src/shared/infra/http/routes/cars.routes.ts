@@ -17,26 +17,28 @@ const uploadCarImageController = new UploadCarImagesController();
 
 const uploadImages = multer(uploadConfig.upload('./tmp/cars'));
 carsRouter.post(
-  '/',
-  ensureAuthentication,
-  ensureAdmin,
-  createCarController.handle,
+    '/',
+    ensureAuthentication,
+    ensureAdmin,
+    createCarController.handle,
 );
 
 carsRouter.get('/available', listAvailableCarsController.handle);
 
 carsRouter.post(
-  '/specifications/:id',
-  ensureAuthentication,
-  ensureAdmin,
-  createCarSpecificationController.handle,
+    '/specifications/:id',
+    ensureAuthentication,
+    ensureAdmin,
+    createCarSpecificationController.handle,
 );
 
 carsRouter.post(
-  '/images/:id',
-  ensureAuthentication,
-  ensureAdmin,
-  uploadImages.array('images'),
-  uploadCarImageController.handle,
+    '/images/:id',
+    ensureAuthentication,
+    ensureAdmin,
+    uploadImages.array('images'),
+    uploadCarImageController.handle,
 );
+
+
 export { carsRouter };

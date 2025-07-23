@@ -10,10 +10,10 @@ const createSpecificationController = new CreateSpecificationController();
 const listSpecificationsController = new ListSpecificationsController();
 
 specificationsRouter.post(
-  '/',
-  ensureAuthentication,
-  ensureAdmin,
-  createSpecificationController.handle,
+    '/',
+    ensureAuthentication,
+    ensureAdmin,
+    createSpecificationController.handle,
 );
 specificationsRouter.get('/', listSpecificationsController.handle);
 export { specificationsRouter };
