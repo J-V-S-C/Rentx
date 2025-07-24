@@ -35,13 +35,13 @@
 
 ### Functional Requirements (FR)
 
-- ✅ - It must be possible to register a new car.
+- It must be possible to register a new car.
 
 ### Business Rules (BR)
 
-- ❌ - It must not be possible to register a car with a license plate that already exists.
-- 🚗 - A new car must be registered as available by default.
-- 👤 - \* Only admin users can register new cars.
+- It must not be possible to register a car with a license plate that already exists.
+- A new car must be registered as available by default.
+- Only admin users can register new cars.
 
 ---
 
@@ -49,14 +49,14 @@
 
 ### Functional Requirements (FR)
 
-- ✅ - It must be possible to list all available cars.
-- ✅ - It must be possible to filter available cars by category.
-- ✅ - It must be possible to filter available cars by name.
-- ✅ - It must be possible to filter available cars by brand.
+- It must be possible to list all available cars.
+- It must be possible to filter available cars by category.
+- It must be possible to filter available cars by name.
+- It must be possible to filter available cars by brand.
 
 ### Business Rules (BR)
 
-- 👤 - The user does not need to be authenticated to view available cars.
+- The user does not need to be authenticated to view available cars.
 
 ---
 
@@ -64,15 +64,15 @@
 
 ### Functional Requirements (FR)
 
-- ✅ - It must be possible to register a specification to a car.
-- ✅ - It must be possible to list all specifications.
-- ✅ - It must be possible to list all cars.
+- It must be possible to register a specification to a car.
+- It must be possible to list all specifications.
+- It must be possible to list all cars.
 
 ### Business Rules (BR)
 
-- ❌ - It must not be possible to register a specification for a non-existent car.
-- ❌ - It must not be possible to register a specification that already exists for the same car.
-- 👤 - Only admin users can register specifications.
+- It must not be possible to register a specification for a non-existent car.
+- It must not be possible to register a specification that already exists for the same car.
+- Only admin users can register specifications.
 
 ---
 
@@ -80,17 +80,17 @@
 
 ### Functional Requirements (FR)
 
-- ✅ - It must be possible to upload images for a car.
-- ✅ - It must be possible to list all cars.
+- It must be possible to upload images for a car.
+- It must be possible to list all cars.
 
 ### Non-Functional Requirements (NFR)
 
-- 📦 - Multer must be used for file upload.
+- Multer must be used for file upload.
 
 ### Business Rules (BR)
 
-- ✅ - It must be possible to upload multiple images for the same car.
-- 👤 - Only admin users can upload car images.
+- It must be possible to upload multiple images for the same car.
+- Only admin users can upload car images.
 
 ---
 
@@ -98,9 +98,11 @@
 
 ### Functional Requirements (FR)
 
-- ✅ - It must be possible to create a new rental.
+- It must be possible to create a new rental.
 
 ### Business Rules (BR)
 
-- ❌ - A rental cannot be created if there is already one open for the same user.
-- ❌ - A rental cannot be created if the car is already rented.
+- The rental must have at least 24 hours as duration.
+- A rental cannot be created if there is already one open for the same user.
+- A rental cannot be created if the car is already rented.
+- The user must be logged in the application.
