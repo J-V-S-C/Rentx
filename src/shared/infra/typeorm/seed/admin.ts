@@ -6,8 +6,9 @@ import { hash } from 'bcrypt';
 async function create() {
     await AppDataSource.initialize();
 
+
     const id = uuidv4();
-    const password = await hash('admin', 8);
+    const password = await hash(process.env.ADMIN_PASSWORD!, 8);
 
     const userRepo = AppDataSource.getRepository(User);
 

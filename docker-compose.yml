@@ -31,6 +31,15 @@ services:
       database_ignite:
         condition: service_healthy
 
+    environment:
+      - NODE_ENV=docker
+      - DB_HOST=database_ignite
+      - DB_PORT=5432
+      - DB_USER=root
+      - DB_PASSWORD=123456
+      - DB_NAME=rentx
+      - ADMIN_PASSWORD=12345
+
 volumes:
   pgdata:
     driver: local

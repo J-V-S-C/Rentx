@@ -1,5 +1,16 @@
+import { config } from 'dotenv';
+
+// Escolhe o .env correto com base no ambiente
+const envPath =
+    process.env.NODE_ENV === 'test'
+        ? '.env.test'
+        : process.env.NODE_ENV === 'docker'
+            ? '.env.docker'
+            : '.env';
+
+config({ path: envPath });
+
 import { DataSource } from 'typeorm';
-import 'dotenv/config';
 import { AppError } from '@errors/AppError';
 import { User } from '@modules/accounts/infra/typeorm/entities/User';
 import { Specification } from '@modules/cars/infra/typeorm/entities/Specification';
