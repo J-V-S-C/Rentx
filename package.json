@@ -7,7 +7,7 @@
         "lint": "eslint src --ext .ts --fix",
         "dev": "tsx watch -r tsconfig-paths/register src/shared/infra/http/server.ts",
         "save": "prettier --write 'src/**/*.ts'",
-        "test": "jest",
+        "test": "jest --runInBand",
         "typeorm:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d src/shared/infra/typeorm/index.ts",
         "typeorm:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d src/shared/infra/typeorm/index.ts",
         "seed:admin": "ts-node -r tsconfig-paths/register src/shared/infra/typeorm/seed/admin.ts"
