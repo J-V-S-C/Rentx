@@ -35,16 +35,11 @@ describe("Returning Rental", () => {
             car_id: car.id,
             user_id: "2318031",
             total: 4,
-            start_date: Date,
-            end_date: Date,
-            created_at: Date,
-            updated_at: Date,
-
-
+            expected_return_date: new Date
         })
-        await devolutionRentalUseCase.execute()
-
+        await devolutionRentalUseCase.execute({ rental_id: rental.id })
         expect(car?.available).toBe(true);
+        expect(rental.total).not.toBe(null)
     });
 
 });
