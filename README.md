@@ -111,6 +111,8 @@
 - If there is a fine, it must be added to the total rental amount.
 - The user must be logged in the application.
 
+---
+
 ## Rental Listing
 
 **FR**
@@ -118,3 +120,16 @@
 
 **BR**
 - The user must be logged in the application
+
+---
+
+## Recover Password
+
+**FR**
+- It must be possible the user recover his password informing his email
+- The user must receive an email with the step-by-step to recover his password
+- The user should be able to insert a new password
+
+**BR**
+- The user needs inform the new password
+- The link send to recover the password must expire in 3hours
