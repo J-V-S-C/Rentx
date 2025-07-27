@@ -1,5 +1,7 @@
+import auth from '@config/auth';
 import { AppError } from '@errors/AppError';
 import { UsersRepository } from '@modules/accounts/infra/typeorm/repositories/UsersRepository';
+import { UserTokenRepository } from '@modules/accounts/infra/typeorm/repositories/UserTokenRepository';
 import { NextFunction, Request, Response } from 'express';
 import { verify } from 'jsonwebtoken';
 
@@ -12,6 +14,7 @@ export async function ensureAuthentication(
     next: NextFunction,
 ): Promise<null> {
     const authHeader = request.headers.authorization;
+    const userTokenRepository = new UserTokenRepository()
 
     if (!authHeader) {
         throw new AppError('Token missing', 401);
@@ -21,11 +24,11 @@ export async function ensureAuthentication(
     try {
         const { sub: user_id } = verify(
             token,
-            'be13222e3f702928fc59522dad39e0a4',
+            auth.secret_refresh_token,
         ) as IPayload;
         const usersRepository = new UsersRepository();
 
-        const user = await usersRepository.findById(user_id);
+        const user = await userTokenRepository.findByUserIdAndRefreshToken(user_id, token);
         if (!user) {
             throw new AppError('Email or password incorrect', 401);
         }
