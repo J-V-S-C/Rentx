@@ -1,7 +1,12 @@
 node_modules/
 .vscode/
 yarn.lock
-diagrama.png
 tmp/
 .env
 coverage/
+.dockerignore
+.env.docker
+.env.test
+.prettierignore
+.prettierrc
+
