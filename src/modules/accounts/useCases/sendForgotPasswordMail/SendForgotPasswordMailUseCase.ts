@@ -1,8 +1,9 @@
+import 'reflect-metadata'
+import { inject, injectable } from "tsyringe";
 import { AppError } from "@errors/AppError";
 import { v4 as uuidv4 } from 'uuid'
 import type { IUsersRepository } from "@modules/accounts/repositories/IUsersRepository";
 import type { IUserTokenRepository } from "@modules/accounts/repositories/IUserTokenRepository";
-import { inject, injectable } from "tsyringe";
 import type { IDateProvider } from "@shared/container/providers/DateProvider/IDateProvider";
 import type { IMailProvider } from "@shared/container/providers/MailProvider/IMailProvider";
 import { resolve } from "path";
