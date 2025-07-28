@@ -28,13 +28,13 @@ describe("List categories", () => {
             email: 'admin@rentx.com.br',
             password: process.env.ADMIN_PASSWORD
         })
-        const { token } = responseToken.body
+        const { refresh_token } = responseToken.body
 
         await request(app).post("/categories").send({
             "name": "CategoriesSuperTestName",
             "description": "CategoriesSuperTestDescription"
         }).set({
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${refresh_token}`
         })
 
         const response = await request(app).get("/categories")

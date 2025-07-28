@@ -2,7 +2,6 @@ import { app } from '@shared/infra/http/app';
 import { AppDataSource } from '@shared/infra/typeorm';
 import { hash } from 'bcrypt';
 import request from 'supertest';
-import { DataSource } from 'typeorm';
 import { v4 as uuidv4 } from 'uuid'
 
 describe("Create Category Controller", () => {
@@ -30,13 +29,13 @@ describe("Create Category Controller", () => {
             email: 'admin@rentx.com.br',
             password: process.env.ADMIN_PASSWORD
         })
-        const { token } = responseToken.body
+        const { refresh_token } = responseToken.body
 
         const response = await request(app).post("/categories").send({
             "name": "CategoriesSuperTestName",
             "description": "CategoriesSuperTestDescription"
         }).set({
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${refresh_token}`
         })
 
         expect(response.status).toBe(201);
@@ -46,13 +45,13 @@ describe("Create Category Controller", () => {
             email: 'admin@rentx.com.br',
             password: process.env.ADMIN_PASSWORD
         })
-        const { token } = responseToken.body
+        const { refresh_token } = responseToken.body
 
         const response = await request(app).post("/categories").send({
             "name": "CategoriesSuperTestName",
             "description": "CategoriesSuperTestDescription"
         }).set({
-            authorization: `Bearer ${token}`
+            authorization: `Bearer ${refresh_token}`
         })
         expect(response.status).toBe(400)
 
