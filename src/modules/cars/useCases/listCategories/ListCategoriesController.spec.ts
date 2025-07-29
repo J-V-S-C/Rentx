@@ -12,7 +12,7 @@ describe("List categories", () => {
         const password = await hash(process.env.ADMIN_PASSWORD!, 8);
         const id = uuidv4()
         await AppDataSource.query(
-            `INSERT INTO USERS(id, name, email, password, is_admin, created_at, driver_license) 
+            `INSERT INTO users(id, name, email, password, is_admin, created_at, driver_license) 
      VALUES ($1, $2, $3, $4, $5, $6, $7)`,
             [id, 'admin', 'admin@rentx.com.br', password, true, new Date(), '3821jde'],
         );
@@ -28,13 +28,13 @@ describe("List categories", () => {
             email: 'admin@rentx.com.br',
             password: process.env.ADMIN_PASSWORD
         })
-        const { refresh_token } = responseToken.body
+        const { token } = responseToken.body
 
         await request(app).post("/categories").send({
             "name": "CategoriesSuperTestName",
             "description": "CategoriesSuperTestDescription"
         }).set({
-            authorization: `Bearer ${refresh_token}`
+            authorization: `Bearer ${token}`
         })
 
         const response = await request(app).get("/categories")
